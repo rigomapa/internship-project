@@ -11,8 +11,8 @@ class SignInPage(Page):
     PASSWORD_INPUT = By.CSS_SELECTOR, 'input[data-name="Password"]'
     CONTINUE_BTN = By.CSS_SELECTOR, 'a.login-button.w-button'
     SIGNIN_HEADER = By.XPATH, '//h1[contains(text(), "Sign in")]'
-    USER_EMAIL = "rgomez@alumni.berklee.edu"
-    USER_PASSWORD = "C@reerist425!!!"
+    USER_EMAIL = "r************************"
+    USER_PASSWORD = "**************"
 
     def open_signin_page(self):
         self.open(self.SIGNIN_PAGE_URL)
