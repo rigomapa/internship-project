@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-
+from time import sleep
 
 from pages.base_page import Page
 
@@ -17,8 +17,14 @@ class SignInPage(Page):
     def open_signin_page(self):
         self.open(self.SIGNIN_PAGE_URL)
         self.wait_for_element_to_appear(*self.SIGNIN_HEADER)
+        sleep(1)
 
-    def sign_in(self):
+    def enter_username(self):
         self.input_text(*self.EMAIL_INPUT, text=self.USER_EMAIL)
+
+    def enter_password(self):
         self.input_text(*self.PASSWORD_INPUT, text=self.USER_PASSWORD)
+
+    def press_continue_button(self):
+        # self.wait_for_element_to_be_clickable(*self.CONTINUE_BTN)
         self.click(*self.CONTINUE_BTN)

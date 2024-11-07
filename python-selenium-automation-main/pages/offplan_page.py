@@ -13,6 +13,7 @@ class OffPlanPage(Page):
     LISTING_CONTAINER = By.CSS_SELECTOR, 'div.cards-properties'
 
     def click_off_plan_side_m(self):
+        self.wait_for_element_to_be_clickable(*self.OFFPLAN_SIDE_M)
         self.click(*self.OFFPLAN_SIDE_M)
 
     def verify_off_plan_page(self):

@@ -9,7 +9,9 @@ def open_main_page(context):
 
 @given("Log in to the page")
 def log_in(context):
-    context.app.signin_page.sign_in()
+    context.app.signin_page.enter_username()
+    context.app.signin_page.enter_password()
+    context.app.signin_page.press_continue_button()
 
 
 @when("Click on “off plan” at the left side menu")

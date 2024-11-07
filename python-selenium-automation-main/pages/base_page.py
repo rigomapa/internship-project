@@ -34,3 +34,6 @@ class Page:
 
     def wait_for_all_elements_to_appear(self, *locator):
         self.wait.until(EC.visibility_of_all_elements_located(locator))
+
+    def wait_for_element_to_be_clickable(self, *locator):
+        self.wait.until(EC.element_to_be_clickable(locator))
