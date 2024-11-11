@@ -2,10 +2,12 @@ from selenium.webdriver.common.by import By
 
 
 from pages.base_page import Page
+from time import sleep
 
 
 class OffPlanPage(Page):
 
+    PAGE_URL = "https://soft.reelly.io"
     OFFPLAN_SIDE_M = By.XPATH, '//div[text()="Off-plan"]'
     PAGE_TITLE = By.CSS_SELECTOR, 'div.page-title.off_plan'
     LISTING_TITLE = By.CSS_SELECTOR, 'div.project-name'

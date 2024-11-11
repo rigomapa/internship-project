@@ -32,6 +32,9 @@ class Page:
     def wait_for_element_to_appear(self, *locator):
         self.wait.until(EC.visibility_of_element_located(locator))
 
+    def wait_for_url(self, url):
+        self.wait.until(EC.url_to_be(url))
+
     def wait_for_all_elements_to_appear(self, *locator):
         self.wait.until(EC.visibility_of_all_elements_located(locator))
 
