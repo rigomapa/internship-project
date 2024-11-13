@@ -14,9 +14,9 @@ def browser_init(context, scenario_name):
     :param context: Behave context
     """
     ### CHROME ###
-    # driver_path = ChromeDriverManager().install()
-    # service = Service(driver_path)
-    # context.driver = webdriver.Chrome(service=service)
+    driver_path = ChromeDriverManager().install()
+    service = Service(driver_path)
+    context.driver = webdriver.Chrome(service=service)
 
     ### FIREFOX ###
     # driver_path = GeckoDriverManager().install()
@@ -33,19 +33,19 @@ def browser_init(context, scenario_name):
     # )
 
     ### BROWSERSTACK ###
-    bs_user = 'ricardogomez_WVBQrT'
-    bs_key = 'NAtfQmuXVFXRywW1Rxyt'
-    url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
-
-    options = Options()
-    bstack_options = {
-        "os" : "OS X",
-        "osVersion" : "Sequoia",
-        'browserName': 'Safari',
-        'sessionName': scenario_name,
-    }
-    options.set_capability('bstack:options', bstack_options)
-    context.driver = webdriver.Remote(command_executor=url, options=options)
+    # bs_user = 'ricardogomez_WVBQrT'
+    # bs_key = 'NAtfQmuXVFXRywW1Rxyt'
+    # url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
+    #
+    # options = Options()
+    # bstack_options = {
+    #     "os" : "OS X",
+    #     "osVersion" : "Sequoia",
+    #     'browserName': 'Safari',
+    #     'sessionName': scenario_name,
+    # }
+    # options.set_capability('bstack:options', bstack_options)
+    # context.driver = webdriver.Remote(command_executor=url, options=options)
 
     context.driver.maximize_window()
     context.driver.implicitly_wait(4)
