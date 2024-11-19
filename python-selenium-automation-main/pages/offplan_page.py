@@ -8,11 +8,17 @@ from time import sleep
 class OffPlanPage(Page):
 
     PAGE_URL = "https://soft.reelly.io"
-    OFFPLAN_SIDE_M = By.XPATH, '//div[text()="Off-plan"]'
+    OFFPLAN_SIDE_M = By.CSS_SELECTOR, ".menu-text-link-leaderboard.w--current"
     PAGE_TITLE = By.CSS_SELECTOR, 'div.page-title.off_plan'
     LISTING_TITLE = By.CSS_SELECTOR, 'div.project-name'
     LISTING_PICTURE = By.CSS_SELECTOR, 'div.project-image'
     LISTING_CONTAINER = By.CSS_SELECTOR, 'div.cards-properties'
+    PROMOTION_POPUP = By.CSS_SELECTOR, ".pop-up-contact-block "
+    POPUP_CLOSE_BTN = By.CSS_SELECTOR, ".button-grey.w-inline-block"
+
+    def close_popup(self):
+        self.wait_for_element_to_appear(*self.PROMOTION_POPUP)
+        self.wait_for_element_to_be_clickable_click(*self.POPUP_CLOSE_BTN)
 
     def click_off_plan_side_m(self):
         self.wait_for_element_to_be_clickable(*self.OFFPLAN_SIDE_M)

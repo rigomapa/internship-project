@@ -28,6 +28,7 @@ class SignInPage(Page):
         self.input_text(*self.PASSWORD_INPUT, text=self.USER_PASSWORD)
 
     def press_continue_button(self):
-        # self.wait_for_element_to_be_clickable(*self.CONTINUE_BTN)
+        sleep(2)
+        self.wait_for_element_to_be_clickable(*self.CONTINUE_BTN)
         self.click(*self.CONTINUE_BTN)
         sleep(2)

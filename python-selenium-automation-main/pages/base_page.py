@@ -40,3 +40,6 @@ class Page:
 
     def wait_for_element_to_be_clickable(self, *locator):
         self.wait.until(EC.element_to_be_clickable(locator))
+
+    def wait_for_element_to_be_clickable_click(self, *locator):
+        self.wait.until(EC.element_to_be_clickable(locator)).click()

@@ -21,6 +21,7 @@ def click_off_plan_side(context):
 
 @then("Verify the right page opens")
 def verify_off_plan_page(context):
+    # context.app.offplan_page.close_popup()
     context.app.offplan_page.verify_off_plan_page()
 
 
